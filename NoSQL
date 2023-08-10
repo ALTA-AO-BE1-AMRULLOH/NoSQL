@@ -1,0 +1,94 @@
+1. a. key/value
+  Caching: Anda dapat menggunakan Couchbase Server untuk caching data yang sering diakses. Misalnya, Anda memiliki aplikasi web yang sering mengakses data
+  statis seperti konfigurasi atau hasil query yang sama. Anda bisa menyimpan data ini  dalam Couchbase menggunakan key yang sesuai, dan aplikasi dapat
+  dengan cepat mengambil data tersebut dari cache tanpa harus mengakses sumber data utama.
+  b. Contoh penggunaan keluarga kolom dalam HBase bisa berupa data yang terkait dengan entitas seperti pengguna atau produk. Misalnya, kita punya data
+  pengguna seperti ini:
+
+Baris 1:
+
+Keluarga Kolom "info": Kolom "nama", "usia", "alamat"
+Keluarga Kolom "kontak": Kolom "email", "telepon"
+Baris 2:
+
+Keluarga Kolom "info": Kolom "nama", "usia"
+Keluarga Kolom "pekerjaan": Kolom "jabatan", "gaji"
+Dalam contoh ini, setiap baris (entitas pengguna) memiliki keluarga kolom yang berbeda-beda dan setiap keluarga kolom memiliki kolom-kolom yang berbeda juga.
+Jika kita ingin menambahkan informasi baru ke entitas pengguna, kita bisa saja menambahkan kolom baru ke dalam keluarga kolom yang sesuai tanpa memengaruhi data yang sudah ada.
+
+Hal ini berbeda dengan model relasional di mana struktur tabel harus didefinisikan dengan cermat sebelum menyimpan data, dan perubahan struktur dapat menjadi
+rumit dan memerlukan perubahan skema yang hati-hati.
+
+Namun, perlu dicatat bahwa penggunaan model keluarga kolom atau orientasi kolom secara umum akan bergantung pada kebutuhan spesifik aplikasi Anda.
+
+  c. Sosial Media: Neo4j dapat digunakan untuk memodelkan dan mengelola jaringan sosial dengan mudah. Misalnya, Anda dapat mewakili pengguna sebagai simpul dan hubungan antara pengguna
+  sebagai tepi (edge), seperti "teman", "mengikuti", atau "diikuti oleh".
+  d. "nama": "robi"
+    "id" : idMember (1881828339)
+
+2. Mekanisme Kerja Basis Data Dokumen (Contoh: MongoDB):
+
+Dokumen: Data disimpan dalam format dokumen, yang biasanya mirip dengan JSON atau BSON (Binary JSON). Dokumen-dokumen ini disimpan dalam koleksi, yang analog dengan tabel dalam basis data relasional.
+
+Skema Fleksibel: Salah satu fitur paling menonjol adalah fleksibilitas dalam skema. Tidak seperti basis data relasional yang memiliki skema kaku, basis data dokumen memungkinkan dokumen dalam koleksi yang sama memiliki struktur yang berbeda.
+
+Indeks: Indeks digunakan untuk mempercepat operasi pencarian. Seperti basis data relasional, Anda dapat membuat indeks pada bidang-bidang tertentu dalam dokumen.
+
+CRUD Operations: Basis data dokumen mendukung operasi CRUD (Create, Read, Update, Delete) seperti basis data relasional. Anda dapat memasukkan, mengambil, memperbarui, dan menghapus dokumen.
+
+Query Language: Basis data dokumen biasanya memiliki bahasa kueri yang kuat, seperti bahasa kueri MongoDB yang fleksibel. Anda dapat melakukan pencarian yang kompleks dengan berbagai kondisi dan filter.
+
+Use Case Basis Data Dokumen (Contoh: MongoDB):
+
+Aplikasi Web dan Mobile: Basis data dokumen cocok untuk menyimpan profil pengguna, posting, komentar, dan data dinamis lainnya dalam aplikasi web dan mobile.
+
+Manajemen Konten: Dalam sistem manajemen konten (CMS), Anda dapat menggunakan basis data dokumen untuk menyimpan artikel, gambar, video, dan konten lainnya.
+
+E-commerce: Basis data dokumen memungkinkan e-commerce untuk menyimpan informasi produk, stok, ulasan, dan data transaksi pelanggan.
+
+Internet of Things (IoT): Basis data dokumen dapat digunakan untuk menyimpan data sensor dan perangkat dalam solusi IoT, karena mampu menangani volume data yang tinggi.
+
+Analisis Data: Basis data dokumen juga bisa digunakan untuk menyimpan data mentah yang nantinya akan dianalisis dan diberdayakan untuk mendapatkan wawasan bisnis.
+
+Prototyping dan Pengembangan Cepat: Karena fleksibilitas skemanya, basis data dokumen sering digunakan dalam fase prototyping dan pengembangan produk yang membutuhkan iterasi cepat.
+
+Perlu diingat bahwa sementara basis data dokumen memiliki banyak kelebihan dalam beberapa skenario, tidak ada solusi yang cocok untuk semua kasus penggunaan. Penting untuk
+mempertimbangkan kebutuhan unik aplikasi Anda saat memilih jenis basis data yang sesuai.
+
+
+3. Keunggulan Penggunaan NoSQL:
+
+Skalabilitas Horizontal: Basis data NoSQL dirancang untuk skalabilitas horizontal dengan mudah. Ini berarti Anda dapat menambahkan lebih banyak server atau node untuk mengatasi pertumbuhan data dan permintaan pengguna tanpa mengganggu kinerja.
+
+Fleksibilitas Skema: Basis data NoSQL, termasuk jenis dokumen, memungkinkan struktur data yang berbeda antar-dokumen dalam koleksi yang sama. Ini berguna ketika data memiliki format yang beragam atau berubah seiring waktu.
+
+Performa Tinggi: NoSQL dapat memberikan performa tinggi dalam situasi di mana Anda memerlukan akses cepat terhadap data yang besar dan kompleks. Model penyimpanan NoSQL yang terdesentralisasi memungkinkan akses langsung ke data.
+
+Penanganan Data Semi-struktur: Basis data NoSQL mampu menangani data semi-struktur, seperti data JSON atau XML, tanpa perlu mentransformasi data menjadi format yang tetap seperti dalam basis data relasional.
+
+Sederhana dalam Skala Kecil: Pada skala kecil, implementasi dan konfigurasi basis data NoSQL bisa lebih mudah daripada basis data relasional yang memerlukan skema yang lebih kompleks.
+
+Pemrograman Lebih Mudah: Basis data NoSQL, terutama basis data dokumen, sering memiliki model pemrograman yang lebih mirip dengan objek asli dalam kode aplikasi, memungkinkan pengembang untuk bekerja dengan nyaman.
+
+Kekurangan Penggunaan NoSQL:
+
+Kurangnya Konsistensi: Beberapa sistem NoSQL mungkin mengorbankan konsistensi data untuk skalabilitas dan performa. Ini bisa menjadi masalah jika integritas data sangat penting.
+
+Kurangnya Standar: Karena NoSQL terdiri dari berbagai jenis dan vendor, tidak ada standar yang seragam untuk bahasa kueri, model konsistensi, atau operasi lainnya.
+
+Kurangnya Keamanan: Beberapa sistem NoSQL mungkin memiliki kerentanannya terhadap ancaman keamanan tertentu, terutama jika pengaturan keamanan tidak dikonfigurasi dengan benar.
+
+Kesulitan Dalam Analisis: Beberapa sistem NoSQL mungkin tidak menyediakan alat analisis yang kuat dan canggih seperti yang umumnya ada dalam basis data relasional.
+
+Keterbatasan Fungsionalitas: Tergantung pada jenis NoSQL, beberapa fitur yang umum dalam basis data relasional mungkin tidak tersedia, seperti dukungan transaksi yang kuat.
+
+Kurangnya Pengalaman: Sistem NoSQL relatif baru dibandingkan dengan basis data relasional, yang artinya mungkin kurangnya pengalaman dan praktik terbaik yang mapan.
+
+Penting untuk mengevaluasi baik keunggulan maupun kekurangan ini sesuai dengan kebutuhan bisnis dan teknis Anda sebelum memilih untuk menggunakan NoSQL atau jenis basis data lainnya.
+
+
+
+
+
+
+
